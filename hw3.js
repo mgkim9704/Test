@@ -52,7 +52,7 @@ nx.onload = function() {
 	gui_filter_freq.on('*',function(data) {
 		synth.updateParams('filter_freq', data.value);
 	});
-
+	
 	gui_filter_env_attack.min = 0;
 	gui_filter_env_attack.max = 3;
 	gui_filter_env_attack.set({ value: synth_params.filterEnvAttackTime })
