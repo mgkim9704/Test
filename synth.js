@@ -172,6 +172,9 @@ Synth.prototype.updateParams = function(params, value) {
 		case 'lfo_depth': 
 			this.parameters.lfoDepth = value;
 			break;	
+		case 'filter_freq': 
+			this.parameters.filterCutoffFreq = value;
+			break;		
 		case 'filter_attack_time': 
 			this.parameters.filterEnvAttackTime = value;
 			break;		
