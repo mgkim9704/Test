@@ -4,7 +4,7 @@ var Reverb = function(context, parameters) {
 	this.input = context.createGain();
 
 	// create nodes
-	this.convolver = context.createConvolver();
+	var convolver = context.createConvolver();
 	this.wetGain = context.createGain(); 
 	this.dryGain = context.createGain();
 
