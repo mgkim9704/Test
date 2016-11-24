@@ -51,8 +51,23 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 Voice.prototype.on = function() {
 	this.osc.start();
 	this.triggerAmpEnvelope();
+	this.triggerFilterEnvelope()
 
 	this.voiceState = 1;
+};
+
+Voice.prototype.triggerFilterEnvelope = function() {
+	var param = this.FilterEnv.gain;
+	var now = this.context.currentTime;
+
+	param.cancelScheduledValues(now);
+
+	// attack
+	param.setValueAtTime(0, now);
+	param.linearRfilterToValueAtTime(this.filterEnvLevel, now + this.filterEnvAttackTime);
+
+	// decay
+	param.linearRfilterToValueAtTime(this.filterEnvLevel * this.filterEnvSustainLevel, now + this.filterEnvAttackTime + this.filterEnvDecayTime);
 };
 
 Voice.prototype.triggerAmpEnvelope = function() {
