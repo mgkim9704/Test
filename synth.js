@@ -11,7 +11,7 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	
 	//lfo osc
 	this.lfoOsc = context.createOscillator();
-	this.lfoOscGain = context.creatGain();
+	this.lfoOscGain = context.createGain();
 
 	// filter 
 	this.filter = context.createBiquadFilter();
