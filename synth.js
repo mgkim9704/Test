@@ -26,7 +26,8 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	this.lfoOsc.connect(this.lfoOscGain);
 	this.lfoOscGain.connect(this.osc.frequency);
 	this.osc.connect(this.filter);
-	this.filter.connect(this.ampEnv);
+	this.filter.connect(this.filterEnv)
+	this.filterEnv.connect(this.ampEnv);
 
 	//this.ampEnv.connect(context.destination);
 	//this.output = this.ampEnv;
