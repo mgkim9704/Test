@@ -9,7 +9,7 @@ var Reverb = function(context, parameters) {
 	this.dryGain = context.createGain();
 
 	// connect 
-	this.input.connect(this.convolver);
+	this.input.connect(convolver);
 	this.convolver.connect(this.wetGain);
 
 	this.input.connect(this.dryGain);
