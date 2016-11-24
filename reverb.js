@@ -24,20 +24,20 @@ var Reverb = function(context, parameters) {
 }
 
 
-Reverb.prototype.loadIumpulseResponse = function() {
+	function loadIumpulseResponse() {
 	
-	var request = new XMLHttpRequest();
-	var url = "sportscentre_cardioid.wav";
-	request.open('GET', url, true);
-	request.responseType = 'arraybuffer';
+		var request = new XMLHttpRequest();
+		var url = "sportscentre_cardioid.wav";
+		request.open('GET', url, true);
+		request.responseType = 'arraybuffer';
 	
-	request.onload = function() {
-		context.decodeAudioData(request.response, function(buffer) {
-			this.convolver.buffer = buffer;
-	    });
-	  }
-	  request.send();
-	}	
+		request.onload = function() {
+		    context.decodeAudioData(request.response, function(buffer) {
+				this.convolver.buffer = buffer;
+		    });
+		  }
+		  request.send();
+		}	
 
 
 Reverb.prototype.updateParams = function (params, value) {
