@@ -4,7 +4,7 @@ var Reverb = function(context, parameters) {
 	this.input = context.createGain();
 
 	// create nodes
-	this convolver = context.createConvolver();
+	this.convolver = context.createConvolver();
 	this.wetGain = context.createGain(); 
 	this.dryGain = context.createGain();
 
@@ -31,7 +31,7 @@ Reverb.prototype.loadIumpulseResponse= function() {
 	request.responseType = 'arraybuffer';
 	request.onload = function() {
 	    context.decodeAudioData(request.response, function(buffer) {
-			this.convolver.buffer = buffer;
+			convolver.buffer = buffer;
 	    });
 	  }
 	  request.send();
