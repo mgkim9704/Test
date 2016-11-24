@@ -144,6 +144,7 @@ nx.onload = function() {
 	gui_reverb_wet_dry.max = 1;
 		gui_reverb_wet_dry.set({ value: reverb_params.reverbWetDry })
 	gui_reverb_wet_dry.on('*',function(data) {
+		reverb.loadIumpulseResponse();
 		reverb.updateParams('reverb_dry_wet', data.value);
 	});
 
