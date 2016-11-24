@@ -60,7 +60,7 @@ Voice.prototype.on = function() {
 };
 
 Voice.prototype.triggerFilterEnvelope = function() {
-	var param = this.FilterEnv.gain;
+	var param = this.filterEnv.gain;
 	var now = this.context.currentTime;
 
 	param.cancelScheduledValues(now);
