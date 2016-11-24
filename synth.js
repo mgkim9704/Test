@@ -32,6 +32,9 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 
 	// preset parameters 
 	this.osc.frequency.value = frequency;
+	
+	this.lfoRate = parameters.lfoRate;
+	this.lfoDepth =parameters.lfoDepth;
 
 	this.filterEnvLevel = amplitude;
 	this.filterEnvAttackTime = parameters.filterEnvAttackTime;
@@ -150,8 +153,11 @@ Synth.prototype.noteOff = function(midi_note_number) {
 Synth.prototype.updateParams = function(params, value) {
 
 	switch (params) {
-		case 'filter_freq': 
-			this.parameters.filterCutoffFreq = value;
+		case 'lfo_rete': 
+			this.parameters.lfoRate = value;
+			break;	
+		case 'lfo_depth': 
+			this.parameters.lfoDepth = value;
 			break;	
 		case 'filter_attack_time': 
 			this.parameters.filterEnvAttackTime = value;
