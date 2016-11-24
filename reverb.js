@@ -31,7 +31,7 @@ Reverb.prototype.loadIumpulseResponse = function() {
 	  	request.responseType = 'arraybuffer';
 	  	request.onload = function() {
 	    context.decodeAudioData(request.response, function(buffer) {
-			convolver.buffer = buffer;
+			this.convolver.buffer = buffer;
 	    });
 	  }
 	  request.send();
