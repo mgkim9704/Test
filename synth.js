@@ -37,8 +37,8 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	
 	this.lfoRate = parameters.lfoRate;
 	this.lfoDepth =parameters.lfoDepth;
-	this.lfoOsc.frequency.value = parameters.lfoRate;
-	this.lfoOscGain.gain.value = parameters.lfoDepth/100;
+	this.lfoOsc.frequency.value = parameters.lfoRate*frequency/100;
+	this.lfoOscGain.gain.value = parameters.lfoDepth;
 
 	this.filterEnvLevel = amplitude;
 	this.filterEnvAttackTime = parameters.filterEnvAttackTime;
