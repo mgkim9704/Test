@@ -17,8 +17,8 @@ var Delay = function(context, parameters) {
 
 	this.input.connect(this.dryGain);
 
-	this.dryGain.connect(this.context.destination);
-	this.wetGain.connect(this.context.destination);
+	this.dryGain.connect(this.fx_input);
+	this.wetGain.connect(this.fx_input);
 
 	this.delayLine.delayTime.value = parameters.delayTime;
 	this.feedbackGain.gain.value = parameters.delayFeedbackGain;
