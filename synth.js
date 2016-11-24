@@ -47,7 +47,6 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	this.filter.type = 'lowpass';
 	this.filter.frequency.value = 5000;
 
-	this.filterEnv.gain.value = 0.5;
 	this.ampEnv.gain.value = 0.5;
 
 	this.voiceState = 0;	
