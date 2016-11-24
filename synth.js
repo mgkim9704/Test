@@ -29,8 +29,8 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	// preset parameters 
 	this.osc.frequency.value = frequency;
 
-	this.filterCutoffFreq = parameters.filterCutoffFreq;
-	this.filterQ = parameters.filterQ;
+	this.filter.frequency.value = parameters.filterCutoffFreq;
+	this.filter.Q.value = parameters.filterQ;
 	this.filterEnvLevel = amplitude;
 	this.filterEnvAttackTime = parameters.filterEnvAttackTime;
 	this.filterEnvDecayTime = parameters.filterEnvDecayTime;
