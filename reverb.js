@@ -9,8 +9,8 @@ var Reverb = function(context, parameters) {
 	this.dryGain = context.createGain();
 
 	// connect 
-	this.input.connect(this.convolver);
-	this.convolver.connect(this.wetGain);
+	this.input.connect(convolver);
+	convolver.connect(this.wetGain);
 
 	this.input.connect(this.dryGain);
 
@@ -31,7 +31,7 @@ Reverb.prototype.loadIumpulseResponse= function() {
 	request.responseType = 'arraybuffer';
 	request.onload = function() {
 	    context.decodeAudioData(request.response, function(buffer) {
-			this.convolver.buffer = buffer;
+			convolver.buffer = buffer;
 	    });
 	  }
 	  request.send();
