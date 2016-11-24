@@ -4,13 +4,13 @@ var Reverb = function(context, parameters) {
 	this.input = context.createGain();
 
 	// create nodes
-	var convolver = context.createConvolver();
+	this convolver = context.createConvolver();
 	this.wetGain = context.createGain(); 
 	this.dryGain = context.createGain();
 
 	// connect 
-	this.input.connect(convolver);
-	convolver.connect(this.wetGain);
+	this.input.connect(this.convolver);
+	this.convolver.connect(this.wetGain);
 
 	this.input.connect(this.dryGain);
 
@@ -31,7 +31,7 @@ Reverb.prototype.loadIumpulseResponse= function() {
 	request.responseType = 'arraybuffer';
 	request.onload = function() {
 	    context.decodeAudioData(request.response, function(buffer) {
-			convolver.buffer = buffer;
+			this.convolver.buffer = buffer;
 	    });
 	  }
 	  request.send();
