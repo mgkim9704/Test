@@ -11,6 +11,9 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 
 	// filter 
 	this.filter = context.createBiquadFilter();
+	
+	// filter emvelope
+	this.filterEnv = context.createGain();
 
 	// amp envelope
 	this.ampEnv = context.createGain();
@@ -146,6 +149,18 @@ Synth.prototype.updateParams = function(params, value) {
 		case 'filter_freq': 
 			this.parameters.filterCutoffFreq = value;
 			break;		
+		case 'filter_attack_time': 
+			this.parameters.filterEnvAttackTime = value;
+			break;		
+		case 'filter_decay_time':
+			this.parameters.filterEnvDecayTime = value;
+			break;		
+		case 'filter_sustain_level':
+			this.parameters.filterEnvSustainLevel = value;
+			break;		
+		case 'filter_release_time':
+			this.parameters.filterEnvReleaseTime = value;
+			break;	
 		case 'amp_attack_time': 
 			this.parameters.ampEnvAttackTime = value;
 			break;		
