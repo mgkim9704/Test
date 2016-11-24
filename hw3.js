@@ -3,24 +3,24 @@ var context = new AudioContext()
 var synth;
 
 var synth_params = {
-	lfoRate:0,
-	lfoDepth: 5,
-	filterCutoffFreq:5000,
+	lfoRate:38,
+	lfoDepth: 37,
+	filterCutoffFreq:684,
 	filterQ:1,
-	filterEnvAttackTime: 0.1,
+	filterEnvAttackTime: 0.59,
 	filterEnvDecayTime: 0.2,
-	filterEnvSustainLevel: 0.9,
-	filterEnvReleaseTime: 0.1,
-	ampEnvAttackTime: 0.1,
-	ampEnvDecayTime: 0.2,
+	filterEnvSustainLevel: 0.55,
+	filterEnvReleaseTime: 1.4,
+	ampEnvAttackTime: 0.14,
+	ampEnvDecayTime: 0.44,
 	ampEnvSustainLevel: 0.9,
-	ampEnvReleaseTime: 0.1
+	ampEnvReleaseTime: 1.56
 };
 
 var delay_params = {
 	delayTime: 0.3,
-	delayFeedbackGain: 0.2,
-	delayWetDry: 0.1
+	delayFeedbackGain: 0.4,
+	delayWetDry: 0.3
 }
 var reverb_params = {
 	reverbWetDry: 0.5
