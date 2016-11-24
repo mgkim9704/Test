@@ -17,8 +17,7 @@
  
  	this.input.connect(this.dryGain);
  
- 	this.dryGain.connect(fx_input);
- 	this.wetGain.connect(fx_input);
+
  
  	this.delayLine.delayTime.value = parameters.delayTime;
  	this.feedbackGain.gain.value = parameters.delayFeedbackGain;
@@ -52,4 +51,6 @@
   
  Delay.prototype.connect = function(node) {
  	this.fx_input = node.input;
+  this.dryGain.connect(this.fx_input);
+ 	this.wetGain.connect(this.fx_input);
  }
