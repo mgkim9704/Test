@@ -50,3 +50,6 @@ Delay.prototype.updateParams = function (params, value) {
 }
 
 
+Delay.prototype.connect = function(node) {
+	this.fx_input = node.input;
+}
