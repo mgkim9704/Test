@@ -151,9 +151,6 @@ Synth.prototype.updateParams = function(params, value) {
 		case 'filter_freq': 
 			this.parameters.filterCutoffFreq = value;
 			break;	
-		case 'filter_Q': 
-			this.parameters.filterQ = value;
-			break;
 		case 'filter_attack_time': 
 			this.parameters.filterEnvAttackTime = value;
 			break;		
