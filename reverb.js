@@ -25,12 +25,14 @@ var Reverb = function(context, parameters) {
 
 
 Reverb.prototype.loadIumpulseResponse = function() {
-		var request = new XMLHttpRequest();
-		var url = "sportscentre_cardioid.wav";
-	  	request.open('GET', url, true);
-	  	request.responseType = 'arraybuffer';
-	  	request.onload = function() {
-	    context.decodeAudioData(request.response, function(buffer) {
+	
+	var request = new XMLHttpRequest();
+	var url = "sportscentre_cardioid.wav";
+	request.open('GET', url, true);
+	request.responseType = 'arraybuffer';
+	
+	request.onload = function() {
+		context.decodeAudioData(request.response, function(buffer) {
 			this.convolver.buffer = buffer;
 	    });
 	  }
