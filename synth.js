@@ -28,6 +28,10 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 
 	this.filterCutoffFreq = parameters.filterCutoffFreq;
 	this.filterQ = parameters.filterQ;
+	this.filterEnvAttackTime = parameters.filterEnvAttackTime;
+	this.filterEnvDecayTime = parameters.filterEnvDecayTime;
+	this.filterEnvSustainLevel = parameters.filterEnvSustainLevel;
+	this.filterEnvReleaseTime = parameters.filterEnvReleaseTime;
 
 	this.ampEnvLevel = amplitude;
 	this.ampEnvAttackTime = parameters.ampEnvAttackTime;
