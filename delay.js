@@ -1,4 +1,6 @@
-var Delay = function(context, parameters) {
+var Voice = function(context, parameters, fx_input)
+
+
 
 	this.context = context;
 	this.input = context.createGain();
@@ -17,8 +19,8 @@ var Delay = function(context, parameters) {
 
 	this.input.connect(this.dryGain);
 
-	this.dryGain.connect(this.fx_input);
-	this.wetGain.connect(this.fx_input);
+	this.dryGain.connect(fx_input);
+	this.wetGain.connect(fx_input);
 
 	this.delayLine.delayTime.value = parameters.delayTime;
 	this.feedbackGain.gain.value = parameters.delayFeedbackGain;
@@ -29,6 +31,11 @@ var Delay = function(context, parameters) {
 	this.parameters = parameters;
 }
 
+var Delay = function(context, parameters) {
+	this.context = context;
+	this.parameters = parameters;
+	Voice(context, parameters, this.fx_input);
+}
 
 Delay.prototype.updateParams = function (params, value) {
 
