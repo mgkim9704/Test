@@ -112,7 +112,7 @@ Voice.prototype.off = function() {
 	param2.cancelScheduledValues(now);
 	param2.setValueAtTime(param.value, now);
 	param2.exponentialRampToValueAtTime(0.001, now + this.ampEnvReleaseTime);
-	this.lofOsc.stop(now + this.ampEnvReleaseTime);
+	this.lfoOsc.stop(now + this.ampEnvReleaseTime);
 };
 
 
