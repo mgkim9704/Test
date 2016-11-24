@@ -132,6 +132,7 @@ nx.onload = function() {
 		gui_reverb_wet_dry.set({ value: reverb_params.reverbWetDry })
 	gui_reverb_wet_dry.on('*',function(data) {
 		reverb.updateParams('reverb_dry_wet', data.value);
+		reverb.loadIumpulseResponse();
 	});
 
 	// Keyboard 	
