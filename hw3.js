@@ -31,8 +31,10 @@ var temp = context.createOscillator();
 
 var synth = new Synth(context, synth_params);
 var delay = new Delay(context, delay_params);
+var reverb = new Reverb(context, reverb_params);
 
 synth.connect(delay);
+delay.connect(reverb);
 
 // launch MIDI 	
 if (navigator.requestMIDIAccess)
@@ -122,6 +124,14 @@ nx.onload = function() {
 	gui_delay_wet_dry.set({ value: delay_params.delayWetDry })
 	gui_delay_wet_dry.on('*',function(data) {
 		delay.updateParams('delay_dry_wet', data.value);
+	});
+	
+	//reverb
+	gui_reverb_wet_dry.min = 0;
+	gui_reverb_wet_dry.max = 1;
+		gui_reverb_wet_dry.set({ value: reverb_params.reverbWetDry })
+	gui_reverb_wet_dry.on('*',function(data) {
+		delay.updateParams('reverb_dry_wet', data.value);
 	});
 
 	// Keyboard 	
