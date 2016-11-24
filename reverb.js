@@ -23,6 +23,19 @@ var Reverb = function(context, parameters) {
 	this.parameters = parameters;
 }
 
+Reverb.prototype.loadIumpulseResponse= function() {
+	
+	var request = new XMLHttpRequest();
+	var url = "sportscentre_cardioid.wav";
+	request.open('GET', url, true);
+	request.responseType = 'arraybuffer';
+	request.onload = function() {
+	    context.decodeAudioData(request.response, function(buffer) {
+			convolver.buffer = buffer;
+	    });
+	  }
+	  request.send();
+	}	
 
 Reverb.prototype.updateParams = function (params, value) {
 
