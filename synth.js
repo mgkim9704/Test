@@ -52,6 +52,7 @@ var Voice = function(context, frequency, amplitude, parameters, effect_node) {
 	this.ampEnvSustainLevel = parameters.ampEnvSustainLevel;
 	this.ampEnvReleaseTime = parameters.ampEnvReleaseTime;
 
+	this.lfoOsc.type = 'sine';
 	this.osc.type = 'square';
 	this.filter.type = 'lowpass';
 	this.filter.frequency.value = parameters.filterCutoffFreq;
