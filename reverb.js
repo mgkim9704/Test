@@ -26,7 +26,7 @@ var Reverb = function(context, parameters) {
 Reverb.prototype.loadIumpulseResponse= function() {
 	
 	var request = new XMLHttpRequest();
-	var url = "sportscentre_cardioid.wav";
+	var url = "1a_marble_hall.wav";
 	request.open('GET', url, true);
 	request.responseType = 'arraybuffer';
 	request.onload = function() {
